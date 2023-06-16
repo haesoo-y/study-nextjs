@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <>
-      <div>TODO-TEST-PAGE-PAGE-ROUTE</div>
+      <div>TODO-TEST-PAGE-APP-ROUTE</div>
     </>
   );
 }
