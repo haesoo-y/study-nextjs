@@ -1,3 +1,4 @@
+import TodoList from "@src/components/TodoList";
 import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 import Link from "next/link";
 
@@ -18,13 +19,10 @@ const Todos = ({
   todos,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
-    <ul>
-      {todos.map((todo) => (
-        <Link href={`/todos/${todo.id}`} key={todo.id}>
-          <li>{todo.title}</li>
-        </Link>
-      ))}
-    </ul>
+    <>
+      <h1>TODO LIST</h1>
+      <TodoList todos={todos} />
+    </>
   );
 };
 
