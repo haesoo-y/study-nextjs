@@ -1,32 +1,17 @@
-import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
-import Link from "next/link";
+import TodoList from "./TodoList";
 
 type Todo = {
   id: number;
   title: string;
 };
 
-const getTodos = async () => {
-  const res = await fetch("http://localhost:3000/api/v1/todos");
-  console.log("todos");
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch todos");
-  }
-
-  return res.json() as Promise<Todo[]>;
-};
-
-const Page = async () => {
-  const todos = await getTodos();
+const Page = () => {
   return (
-    <ul>
-      {todos.map((todo) => (
-        <Link href={`/todos/${todo.id}`} key={todo.id}>
-          <li>{todo.title}</li>
-        </Link>
-      ))}
-    </ul>
+    <>
+      <h1>TODO LIST</h1>
+      {/* @ts-expect-error Async Server Component */}
+      <TodoList />
+    </>
   );
 };
 

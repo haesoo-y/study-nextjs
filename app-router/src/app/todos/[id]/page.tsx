@@ -1,6 +1,9 @@
+import { TodoWrapper } from "./page.styled";
+
 type Todo = {
   id: number;
   title: string;
+  description: string;
 };
 
 interface Props {
@@ -23,9 +26,10 @@ const getTodo = async (id: string) => {
 const Todo = async ({ params: { id } }: Props) => {
   const todo = await getTodo(id);
   return (
-    <>
+    <TodoWrapper>
       <h3>{todo.title}</h3>
-    </>
+      <p>{todo.description}</p>
+    </TodoWrapper>
   );
 };
 
