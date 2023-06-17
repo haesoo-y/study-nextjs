@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { TodoListWrapper } from "./TodoList.styled";
+import styles from "./todolist.module.css";
 
 type Todo = {
   id: number;
@@ -20,15 +20,17 @@ const getTodos = async () => {
 const TodoList = async () => {
   const todos = await getTodos();
   return (
-    <TodoListWrapper>
+    <div className={styles.wrapper}>
       {todos.map((todo) => (
-        <li key={todo.id}>
+        <li key={todo.id} className={styles.item}>
           <p>✔️</p>
-          <p>{todo.title}</p>
-          <Link href={`/todos/${todo.id}`}>자세히 보기</Link>
+          <p className={styles.title}>{todo.title}</p>
+          <Link href={`/todos/${todo.id}`} className={styles.link}>
+            자세히 보기
+          </Link>
         </li>
       ))}
-    </TodoListWrapper>
+    </div>
   );
 };
 

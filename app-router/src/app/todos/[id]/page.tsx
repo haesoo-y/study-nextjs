@@ -1,4 +1,4 @@
-import { TodoWrapper } from "./page.styled";
+import styles from "./page.module.css";
 
 type Todo = {
   id: number;
@@ -26,10 +26,10 @@ const getTodo = async (id: string) => {
 const Todo = async ({ params: { id } }: Props) => {
   const todo = await getTodo(id);
   return (
-    <TodoWrapper>
-      <h3>{todo.title}</h3>
+    <div className={styles.wrapper}>
+      <h3 className={styles.title}>{todo.title}</h3>
       <p>{todo.description}</p>
-    </TodoWrapper>
+    </div>
   );
 };
 

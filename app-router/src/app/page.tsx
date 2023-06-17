@@ -1,9 +1,9 @@
-import { HomeWrapper } from "./page.styled";
+import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <HomeWrapper>
-      <p>TODO-NEXT-APP-ROUTE</p>
-    </HomeWrapper>
+    <div className={styles.wrapper}>
+      <p className={styles.text}>TODO-NEXT-APP-ROUTE</p>
+    </div>
   );
 }

@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  background-color: #232222;
+  padding: 20px;
+  width: 100%;
+}
+
+.link {
+  color: white;
+  margin-left: 30px;
+}

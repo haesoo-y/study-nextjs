@@ -1,6 +1,7 @@
-import { LayoutWrapper } from "./layout.styled";
-import StyledComponentsRegistry from "./lib/registry";
 import NavBar from "./NavBar";
+
+import styles from "./layout.module.css";
+import "./global.css";
 
 export const metadata = {
   title: "Create Next App!!!!!",
@@ -15,12 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <StyledComponentsRegistry>
-          <LayoutWrapper>
-            <NavBar />
-            {children}
-          </LayoutWrapper>
-        </StyledComponentsRegistry>
+        <div className={styles.wrapper}>
+          <NavBar />
+          {children}
+        </div>
       </body>
     </html>
   );

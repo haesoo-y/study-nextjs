@@ -1,0 +1,21 @@
+.wrapper {
+  width: 360px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.title {
+  font-size: 16px;
+  line-height: 2;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.link {
+  color: #3535da;
+}

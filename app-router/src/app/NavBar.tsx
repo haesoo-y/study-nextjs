@@ -1,12 +1,16 @@
 import Link from "next/link";
-import { NavWrapper } from "./NavBar.styled";
+import styles from "./navbar.module.css";
 
 const NavBar = () => {
   return (
-    <NavWrapper>
-      <Link href="/todos">todos</Link>
-      <Link href="/">home</Link>
-    </NavWrapper>
+    <nav className={styles.wrapper}>
+      <Link className={styles.link} href="/todos">
+        todos
+      </Link>
+      <Link className={styles.link} href="/">
+        home
+      </Link>
+    </nav>
   );
 };
 
