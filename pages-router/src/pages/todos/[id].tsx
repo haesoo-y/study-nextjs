@@ -1,13 +1,6 @@
 import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
-import { styled } from "styled-components";
 
-const TodoWrapper = styled.div`
-  width: 320px;
-  padding: 40px;
-  margin: 24px;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.3);
-`;
+import styles from "@styles/todo.module.css";
 
 type Todo = {
   id: number;
@@ -29,10 +22,10 @@ const Todo = ({
   todo,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
-    <TodoWrapper>
-      <h3>{todo.title}</h3>
+    <div className={styles.wrapper}>
+      <h3 className={styles.title}>{todo.title}</h3>
       <p>{todo.description}</p>
-    </TodoWrapper>
+    </div>
   );
 };
 

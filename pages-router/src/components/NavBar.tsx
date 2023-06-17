@@ -1,23 +1,17 @@
 import Link from "next/link";
-import { styled } from "styled-components";
 
-const NavWrapper = styled.nav`
-  display: flex;
-  background-color: #232222;
-  padding: 20px;
-  width: 100%;
-  & a {
-    color: white;
-    margin-left: 30px;
-  }
-`;
+import styles from "@styles/navbar.module.css";
 
 const NavBar = () => {
   return (
-    <NavWrapper>
-      <Link href="/todos">todos</Link>
-      <Link href="/">home</Link>
-    </NavWrapper>
+    <nav className={styles.wrapper}>
+      <Link className={styles.link} href="/todos">
+        todos
+      </Link>
+      <Link className={styles.link} href="/">
+        home
+      </Link>
+    </nav>
   );
 };
 

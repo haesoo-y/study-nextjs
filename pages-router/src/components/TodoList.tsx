@@ -1,23 +1,6 @@
 import Link from "next/link";
-import { styled } from "styled-components";
 
-const TodoListWrapper = styled.div`
-  width: 360px;
-  padding: 20px;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.3);
-  & p {
-    font-size: 16px;
-  }
-  & li {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  & a {
-    color: #3535da;
-  }
-`;
+import styles from "@styles/todolist.module.css";
 
 type Todo = {
   id: number;
@@ -30,15 +13,17 @@ interface TodoListProps {
 
 const TodoList = ({ todos }: TodoListProps) => {
   return (
-    <TodoListWrapper>
+    <div className={styles.wrapper}>
       {todos.map((todo) => (
-        <li key={todo.id}>
+        <li key={todo.id} className={styles.item}>
           <p>✔️</p>
-          <p>{todo.title}</p>
-          <Link href={`/todos/${todo.id}`}>자세히 보기</Link>
+          <p className={styles.title}>{todo.title}</p>
+          <Link href={`/todos/${todo.id}`} className={styles.link}>
+            자세히 보기
+          </Link>
         </li>
       ))}
-    </TodoListWrapper>
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
 import TodoList from "@src/components/TodoList";
 import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
-import Link from "next/link";
+
+import styles from "@styles/todolist.module.css";
 
 type Todo = {
   id: number;
@@ -20,7 +21,7 @@ const Todos = ({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <>
-      <h1>TODO LIST</h1>
+      <h1 className={styles.title}>TODO LIST</h1>
       <TodoList todos={todos} />
     </>
   );
