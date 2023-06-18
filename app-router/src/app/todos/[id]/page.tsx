@@ -13,7 +13,9 @@ interface Props {
 }
 
 const getTodo = async (id: string) => {
-  const res = await fetch(`http://localhost:3000/api/v1/todos/${id}`);
+  const res = await fetch(`http://localhost:3030/api/v1/todos/${id}`, {
+    cache: "no-store",
+  });
   console.log({ id });
 
   if (!res.ok) {

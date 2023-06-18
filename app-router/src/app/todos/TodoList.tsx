@@ -7,7 +7,9 @@ type Todo = {
 };
 
 const getTodos = async () => {
-  const res = await fetch("http://localhost:3000/api/v1/todos");
+  const res = await fetch("http://localhost:3030/api/v1/todos", {
+    cache: "no-store",
+  });
   console.log("todos");
 
   if (!res.ok) {
