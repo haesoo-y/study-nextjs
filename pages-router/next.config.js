@@ -8,8 +8,7 @@ const nextConfig = {
     return [
       {
         source: "/api/v1/:path*",
-        destination:
-          "https://800efed8-3644-4aa2-b61d-9ed9c519a49f.mock.pstmn.io/api/:path*",
+        destination: `${process.env.API_URL}/api/:path*`,
       },
     ];
   },
